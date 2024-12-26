@@ -1,13 +1,10 @@
-function getFormvalue(event) {
-    event.preventDefault(); 
+function getFormvalue() {
+	const form = document.getElementById("form1");
 
-    const firstName = document.querySelector('input[name="fname"]').value; 
-    const lastName = document.querySelector('input[name="lname"]').value; 
+    // Retrieve the input values for 'fname' and 'lname'
+    const firstName = form.elements["fname"].value;
+    const lastName = form.elements["lname"].value;
 
-    const fullName = firstName + ' ' + lastName; 
-
-    alert(fullName); 
+    // Display an alert with the concatenated first and last names
+    alert(`${firstName} ${lastName}`);
 }
-
-
-document.querySelector('form').addEventListener('submit', getFormvalue);
