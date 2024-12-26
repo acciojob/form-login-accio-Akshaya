@@ -1,13 +1,13 @@
-function getFormvalue() {
-    //Write your code here
-	const form = document.getElementById("form1");
-	if(form){
-		const firstName = form.querySelector('input[name="fname"]').value;
-		const lastName = form.querySelector('input[name="lname"]').value;
+function getFormvalue(event) {
+    event.preventDefault(); 
 
-		alert(`${firstName}${lastName}`);
-	}
-	else{
-		console.error("Form Not Found")
-	}
+    var firstName = document.querySelector('input[name="fname"]').value; 
+    var lastName = document.querySelector('input[name="lname"]').value; 
+
+    var fullName = firstName + ' ' + lastName; 
+
+    alert(fullName); 
 }
+
+
+document.querySelector('form').addEventListener('submit', getFormvalue);
