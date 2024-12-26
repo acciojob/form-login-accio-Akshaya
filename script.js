@@ -1,9 +1,13 @@
 function getFormvalue() {
     //Write your code here
-	const form = document.Forms["form1"];
-	
-	const firstname = form["fname"].value;
-	const lastname = form["lname"].value;
+	const form = document.getElementById("form1");
+	if(form){
+		const firstName = form.querySelector('input[name="fname"]').value;
+		const lastName = form.querySelector('input[name="lname"]').value;
 
-	alert(`${firstName} ${lastName}`);
+		alert(`${firstName}${lastName}`);
+	}
+	else{
+		console.error("Form Not Found")
+	}
 }
